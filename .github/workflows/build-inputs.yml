@@ -33,6 +33,7 @@ on:
         - "Sofle"
         - "Splaytoraid"
         - "Zodiark"
+        - "Cowbell"
       rgb:
         description: 'KMK RGB'
         required: false
