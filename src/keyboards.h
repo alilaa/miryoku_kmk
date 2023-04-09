@@ -12,7 +12,7 @@
 #elif defined (KMK_KEYBOARD_BOARDSOURCE_LULU)
   #include "mapping/62/lulu.h"
 #elif defined (KMK_KEYBOARD_COWBELL)
-  #include "mapping/62/Cowbell.h"
+  #include "mapping/62/cowbell.h"
 #elif defined (KMK_KEYBOARD_BOARDSOURCE_MICRODOX)
   #include "mapping/36/minidox.h"
 #elif defined (KMK_KEYBOARD_CRKBD)
