@@ -33,7 +33,7 @@ on:
         - "Sofle"
         - "Splaytoraid"
         - "Zodiark"
-        - "Cowbell"
+        - "COWBELL"
       rgb:
         description: 'KMK RGB'
         required: false
@@ -55,6 +55,7 @@ on:
         - "BEAKL15"
         - "Colemak"
         - "ColemakDHK"
+        - "ColemakDHKSWE"
         - "Dvorak"
         - "Halmak"
         - "QWERTY"

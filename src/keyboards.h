@@ -11,6 +11,8 @@
   #include "mapping/60/preonic.h"
 #elif defined (KMK_KEYBOARD_BOARDSOURCE_LULU)
   #include "mapping/62/lulu.h"
+#elif defined (KMK_KEYBOARD_COWBELL)
+  #include "mapping/62/Cowbell.h"
 #elif defined (KMK_KEYBOARD_BOARDSOURCE_MICRODOX)
   #include "mapping/36/minidox.h"
 #elif defined (KMK_KEYBOARD_CRKBD)

@@ -1,0 +1,14 @@
+# Copyright 2022 Manna Harbour
+# https://github.com/manna-harbour/miryoku
+
+name: 'Build Cowbell'
+on:
+  - workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    with:
+      mode: '["build"]'
+      keyboard: '["COWBELL"]'
+      alphas: '["ColemakDHKSWE"]'
+      clipboard: '["Win"]'
