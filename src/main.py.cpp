@@ -4,7 +4,37 @@ U_HASH generated
 
 #include "miryoku.h"
 
+#if defined (KMK_KEYBOARD_COWBELL)
+print("Starting")
+
+import board
+
+from kmk.kmk_keyboard import KMKKeyboard, UnicodeMode
+from kmk.scanners import DiodeOrientation
+from kmk.modules.split import Split, SplitSide, SplitType
+
+keyboard = KMKKeyboard()
+keyboard.debug_enabled = True
+
+split = Split(
+    split_flip=False,  # If both halves are the same, but flipped, set this True
+    split_side=None,  # Sets if this is to SplitSide.LEFT or SplitSide.RIGHT, or use EE hands
+    split_type=SplitType.UART,  # Defaults to UART
+    split_target_left=True,  # Assumes that left will be the one on USB. Set to False if it will be the right
+    uart_interval=20,  # Sets the uarts delay. Lower numbers draw more power
+    data_pin=board.GP17,  # The primary data pin to talk to the secondary device with
+    data_pin2=board.GP16,  # Second uart pin to allow 2 way communication
+    uart_flip=False,  # Reverses the RX and TX pins if both are provided
+    use_pio=False,  # Use RP2040 PIO implementation of UART. Required if you want to use other pins than RX/TX
+)
+keyboard.modules.append(split)
+
+keyboard.col_pins = (board.GP5, board.GP4, board.GP3, board.GP2, board.GP1, board.GP0)
+keyboard.row_pins = (board.GP11, board.GP10, board.GP9, board.GP8, board.GP7, board.GP6)
+keyboard.diode_orientation = DiodeOrientation.COL2ROW
+#else
 from kb import KMKKeyboard; keyboard = KMKKeyboard(KMK_KCP)
+#endif
 from kmk.keys import KC
 from kmk.modules.layers import Layers; keyboard.modules.append(Layers())
 from kmk.modules.modtap import ModTap; keyboard.modules.append(ModTap())
